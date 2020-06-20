@@ -14,7 +14,12 @@ class _MainPageState extends State<MainPage> {
         centerTitle: true,
       ),
       body: Center(
-        child: Text('Coming Soon'),
+        child: RaisedButton(
+          child: Text('go to second page'),
+          onPressed: () {
+            Navigator.pushNamed(context, secondPageRoute);
+          },
+        ),
       ),
     );
   }
