@@ -6,13 +6,19 @@ class SecondPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('2nd page'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Text(text),
+    return WillPopScope(
+      onWillPop: () {
+        Navigator.pop(context);
+        return;
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('2nd page'),
+          centerTitle: true,
+        ),
+        body: Center(
+          child: Text(text),
+        ),
       ),
     );
   }
