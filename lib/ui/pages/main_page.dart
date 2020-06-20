@@ -6,6 +6,8 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  TextEditingController _dummyTextController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,11 +16,25 @@ class _MainPageState extends State<MainPage> {
         centerTitle: true,
       ),
       body: Center(
-        child: RaisedButton(
-          child: Text('go to second page'),
-          onPressed: () {
-            Navigator.pushNamed(context, secondPageRoute);
-          },
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Align(
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+                child: TextField(
+                  controller: _dummyTextController,
+                ),
+              ),
+            ),
+            RaisedButton(
+              child: Text('go to second page'),
+              onPressed: () {
+                Navigator.pushNamed(context, secondPageRoute,
+                    arguments: _dummyTextController.text);
+              },
+            ),
+          ],
         ),
       ),
     );
