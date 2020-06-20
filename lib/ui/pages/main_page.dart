@@ -24,6 +24,7 @@ class _MainPageState extends State<MainPage> {
                 margin: EdgeInsets.symmetric(horizontal: 24, vertical: 20),
                 child: TextField(
                   controller: _dummyTextController,
+                  decoration: InputDecoration(hintText: 'Input string here'),
                 ),
               ),
             ),
@@ -31,7 +32,7 @@ class _MainPageState extends State<MainPage> {
               child: Text('go to second page'),
               onPressed: () {
                 Navigator.pushNamed(context, secondPageRoute,
-                    arguments: _dummyTextController.text);
+                    arguments: _dummyTextController.text ?? '');
               },
             ),
           ],
