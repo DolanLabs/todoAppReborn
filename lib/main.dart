@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todoapp/ui/pages/pages.dart';
+import 'package:todoapp/shared/shared.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,7 +10,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainPage(),
+      onGenerateRoute: (settings) {
+        return Router.generateRoute(settings);
+      },
+      initialRoute: homeRoute,
+      // home: MainPage(),
     );
   }
 }
