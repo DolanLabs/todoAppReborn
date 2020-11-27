@@ -1,8 +1,6 @@
-
-
-
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:todoapp/shared/shared.dart';
 
-part 'main_page.dart';
-part 'second_page.dart';
+part 'home_page.dart';
+part 'getting_started_page.dart';
