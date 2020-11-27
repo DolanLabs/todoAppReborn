@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:todoapp/ui/pages/pages.dart';
 
 part 'shared_values.dart';
-part 'router.dart';
+part 'app_route.dart';
